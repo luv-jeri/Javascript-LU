@@ -1,204 +1,65 @@
-// # Prototypes
-// function Person(name, age) {
-//   this.name = name;
-//   this.age = age;
-// }
+class Card {
+  constructor(name = 'Box', cost = 0, emogie = '📦') {
+    this.name = name;
+    this.cost = cost;
+    this.emogie = emogie;
+    this.element = document.createElement('div');
+    this.element.className = 'card';
+    this.element.innerHTML = `  
+      <div class="card__name">${this.name}</div>
+      <div class="card__cost">${this.emogie.repeat(this.cost)}</div>
+    `;
+  }
+  #wrapper = document.querySelector('#wrapper');
 
-// console.log(Person.prototype);
+  render() {
+    this.#wrapper.append(this.element);
+  }
 
-// Person.prototype.job = 'Developer';
+  remove() {
+    this.element.remove();
+  }
 
-// const p1 = new Person('john', 43);
-// const p2 = new Person('Jane', 22);
+  update(name, cost, emogie) {
+    this.name = name;
+    this.cost = cost;
+    this.emogie = emogie;
+    this.render();
+  }
 
-// console.log(p1);
-// console.log(p1.age);
-// console.log(p1.job);
+  changeColor(color) {
+    this.element.style.backgroundColor = color;
+    this.remove();
+    this.render();
+  }
 
-// # Inheritance
+  reshape(h, w) {
+    this.element.style.height = h;
+    this.element.style.width = w;
+    this.remove();
+    this.render();
+  }
 
-// function Person(name, age) {
-//   this.name = name;
-//   this.age = age;
-//   this.breadth = function () {
-//     console.log(this.name, 'is Breathing...');
-//   };
-// }
-
-// function Developer(skill, name, age) {
-//   this.skill = skill;
-//   this.name = name;
-//   this.age = age;
-//   this.code = function () {
-//     console.log(this.name, 'is Coding...');
-//   };
-//   this.breadth = function () {
-//     console.log(this.name, 'is Breathing...');
-//   };
-// }
-
-// const dev1 = new Developer('JS', 'jonh', 32);
-// const p1 = new Person('john', 32);
-
-// p1.breadth()
-// dev1.code();
-
-// dev1.breadth()
-
-// function Person(name, age) {
-//   this.name = name;
-//   this.age = age;
-// }
-
-// Person.prototype.breadth = function () {
-//   console.log(this.name, 'is Breathing...');
-// };
-
-// function Developer(name, age, skill) {
-//   this.skill = skill;
-//   Person.prototype.constructor(this, name, age);
-// }
-
-// Developer.prototype.code = function () {
-//   console.log('is Coding...');
-// };
-
-// Developer.prototype.__proto__ = Person.prototype;
-
-// console.log(Developer.prototype);
-
-// const dev1 = new Developer('jonh', 32, 'JS');
-
-// console.log(dev1);
-
-// # Classes
-
-// class Person {
-//   constructor(name) {
-//     this.name = name;
-//   }
-//   run() {
-//     console.log('run');
-//   }
-//   sayHello() {
-//     console.log(` ${this.name} Hello `);
-//   }
-// }
-
-// class Developer extends Person {
-//   constructor(name, skill) {
-//     super(name)
-//     this.skill = skill;
-//   }
-
-//   code(){
-//     console.log('Coding')
-//   }
-// }
-
-// const dev1 =  new Developer("John" ,  "JS")
-
-// // console.log(dev1.hasOwn("name"))
-
-// console.log(Promise.any)
-
-// function Person(name) {
-//   this.name = name;
-// }
-
-// Person.prototype.breadth = function () {
-//   console.log(`${this.name} is breadthing`);
-// };
-
-// function Developer(skill, name) {
-//   this.skill = skill;
-//   Person.call(this, name);
-// }
-
-// Object.setPrototypeOf(Developer.prototype, Person.prototype);
-
-// Developer.prototype.code = function () {
-//   console.log(`${this.name} is coding`);
-// };
-
-// const dev1 = new Developer('JS', 'john');
-
-// console.log(dev1);
-
-// function Person(name, age) {
-//   this.name = name;
-//   this.age = age;
-// }
-
-//  console.log(Person.prototype);
-// Person.prototype.job = 'Developer';
-
-// const p1 = new Person('john', 32);
-
-// console.log(p1);
-// console.log(p1.name);
-// console.log(p1.__proto__);
-// console.log(p1.__proto__.job)
-// console.log(p1.job)
-
-// const obj = {
-//   name: 'john',
-// };
-
-// console.log('Object.prototype', Object.prototype);
-
-// console.log(obj.hasOwnProperty('name'));
-
-// const arr_ = new Array(1, 2, 3, 4, 5);
-// console.log(Array.prototype)
-
-// arr_.push(3)
-
-// console.log(arr_);
-
-// const str = 'Hello';
-// const str_ = new String('Hello');
-// console.log(String.prototype);
-
-// console.log(str_.at(2));
-
-// const num = 3.3453667;
-// const num_ = new Number(3);
-
-// console.log(Number.prototype);
-
-// console.log(num_.toPrecision(5));
-
-// const bool = true;
-// const bool_ = new Boolean(true);
-
-// console.log(Boolean.prototype);
-
-// console.log(bool_.valueOf());
-
-function Person(name, age) {
-  this.name = name;
-  this.age = age;
+  static addAnimation(card) {
+    card.element.classList.add('card--animation');
+  }
 }
 
-Person.prototype.breadth = function () {
-  console.log(`${this.name} is breathing`);
-};
+const card1 = new Card('Box', 1, '📦');
+const card2 = new Card('Box', 1, '📦');
 
-function Developer(skill, name, age) {
-  this.skill = skill;
+card1.render();
+card1.changeColor('green');
+card1.reshape('300px', '300px');
+card2.render();
 
-  Person.call(this, name, age); // ! Tell me the reason
-}
+const p1 = new Card('Phone', 2, '📱');
 
-Developer.prototype.code = function () {
-  console.log('coding');
-};
+p1.render();
+p1.changeColor('#8EC3B0');
 
-Developer.prototype.__proto__ = Person.prototype;
+Card.addAnimation(card1);
 
-const dev1 = new Developer('JS', 'john', 32);
+console.log(card1);
 
-console.log(dev1);
-
-dev1.breadth();
+card1.remove();
