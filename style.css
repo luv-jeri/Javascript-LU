@@ -85,3 +85,23 @@ button {
     text-align: center;
     text-transform: uppercase;
 }
+
+
+@keyframes animate {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+.animate {
+    animation: animate 1s linear infinite;
+}
