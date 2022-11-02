@@ -8,54 +8,80 @@
     height: 100vh;
     width: 100vw;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     background-color: #3C4048;
 }
 
-#title {
-    color: #00ABB3;
-    font-size: 3rem;
-}
 
-.card {
-    margin: 5px;
-    width: 300px;
-    height: 300px;
-    background-color: #00ABB3;
-    border-radius: 10px;
+
+
+
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    height: 20vh;
+    border: 4px solid #9F73AB;
+    width: 100%;
 }
 
-.card__name {
-    color: #054dde;
-    font-size: 2rem;
-}
-
-.card__cost {
-    color: #3C4048;
+input {
+    margin: 5px;
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
     font-size: 1.5rem;
+    padding: 0px 10px;
 }
 
 
-@keyframes cardAnimation {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.1);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-
+button {
+    margin: 5px;
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.5rem;
+    background-color: #9F73AB;
+    color: white;
+    cursor: pointer;
 }
 
-.card--animation {
-    animation: cardAnimation 1s ease-in-out;
+#show-data {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 100%;
+    background-color: #404258;
+}
+
+.emogie {
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    border-radius: 50%;
+    background-color: #9F73AB;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    padding: 10px;
+}
+
+.emogie h3 {
+    font-size: 1.5rem;
+    position: absolute;
+    bottom: -55px;
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
 }

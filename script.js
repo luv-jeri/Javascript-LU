@@ -1,65 +1,40 @@
-class Card {
-  constructor(name = 'Box', cost = 0, emogie = '📦') {
+class Emogie {
+  #container = document.querySelector('#show-data');
+  constructor(name, symbol) {
     this.name = name;
-    this.cost = cost;
-    this.emogie = emogie;
-    this.element = document.createElement('div');
-    this.element.className = 'card';
-    this.element.innerHTML = `  
-      <div class="card__name">${this.name}</div>
-      <div class="card__cost">${this.emogie.repeat(this.cost)}</div>
-    `;
+    this.symbol = symbol;
   }
-  #wrapper = document.querySelector('#wrapper');
 
   render() {
-    this.#wrapper.append(this.element);
+    const div = document.createElement('div');
+    div.classList.add('emogie');
+    div.innerHTML = `
+      <h1>${this.symbol}</h1>
+      <h3>${this.name}</h3>
+    `;
+    this.box = div;
+    this.#container.append(div);
+  }
+
+  chanegColor(color) {
+    this.box.style.backgroundColor = color;
   }
 
   remove() {
-    this.element.remove();
-  }
-
-  update(name, cost, emogie) {
-    this.name = name;
-    this.cost = cost;
-    this.emogie = emogie;
-    this.render();
-  }
-
-  changeColor(color) {
-    this.element.style.backgroundColor = color;
-    this.remove();
-    this.render();
-  }
-
-  reshape(h, w) {
-    this.element.style.height = h;
-    this.element.style.width = w;
-    this.remove();
-    this.render();
-  }
-
-  static addAnimation(card) {
-    card.element.classList.add('card--animation');
+    this.box.remove();
   }
 }
 
-const card1 = new Card('Box', 1, '📦');
-const card2 = new Card('Box', 1, '📦');
+const e1 = new Emogie('smile', '😀');
+const e2 = new Emogie('Cry', '🥲');
+const e3 = new Emogie('Laugh', '😂');
 
-card1.render();
-card1.changeColor('green');
-card1.reshape('300px', '300px');
-card2.render();
+e1.render();
+e2.render();
+e3.render();
 
-const p1 = new Card('Phone', 2, '📱');
+e1.chanegColor('red');
+e2.chanegColor('#82CD47');
 
-p1.render();
-p1.changeColor('#8EC3B0');
-
-Card.addAnimation(card1);
-
-console.log(card1);
-
-card1.remove();
+e3.remove();
+e3.render();
