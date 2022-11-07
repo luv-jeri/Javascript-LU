@@ -1,59 +1,55 @@
-class Emogie {
-  #container = document.querySelector('#show-data');
-  constructor(name, symbol) {
-    this.name = name;
-    this.symbol = symbol;
+// const p = new Promise((resolve, reject) => {
+//   const button = document.querySelectorAll('button');
+
+//   if (button.length > 0) {
+//     resolve(button.length);
+//   } else {
+//     reject("No button in UI");
+//   }
+// });
+
+// p.then((data) => {
+//   console.log(data);
+// });
+
+// p.catch((err) => {
+//   console.log(err);
+// });
+
+// console.log('Line 1');
+// console.log('Line 2');
+// console.log('Line 3');
+class Promise {
+  constructor(fun) {
+    this.fun = fun;
+    this.resolve = (data) => {
+      this.data = data;
+    };
+    this.reject = (err) => {
+      this.err = err;
+    };
+    fun(this.resolve, this.reject);
   }
 
-  render() {
-    const div = document.createElement('div');
-    div.classList.add('emogie');
-    div.innerHTML = `
-      <h1>${this.symbol}</h1>
-      <h3>${this.name}</h3>
-    `;
-    this.box = div;
-    this.#container.append(div);
+  then(cb) {
+    this.data && cb(this.data);
   }
 
-  chanegColor(color) {
-    this.box.style.backgroundColor = color;
-  }
-
-  remove() {
-    this.box.remove();
-  }
-
-  animate() {
-    this.box.classList.add('animate');
-    setTimeout(() => {
-      this.box.classList.remove('animate');
-    }, 1000);
-  }
-
-  increaseSize(times) {
-    this.box.style.transform = `scale(${times})`;
+  catch(cb) {
+    this.err && cb(this.err);
   }
 }
 
-const e1 = new Emogie('smile', '😀');
-const e2 = new Emogie('Cry', '🥲');
-const e3 = new Emogie('Laugh', '😂');
-const e4 = new Emogie('Angry', '😡');
+const loopPromise = new Promise((resolve, reject) => {
+  const button = document.querySelectorAll('button');
+  if (button.length > 0) resolve('DATA .....');
+  else reject('ERRR');
+});
 
-e1.render();
-e2.render();
-e3.render();
-e4.render();
-e4.chanegColor('red');
+loopPromise.then((data) => {
+  console.log('SUCCESS', data);
+});
 
-e1.increaseSize(1.1)
-
-e1.chanegColor('red');
-e2.chanegColor('#82CD47');
-
-e3.remove();
-e3.render();
-
-e4.animate();
-e1.animate();
+loopPromise.catch((err) => {
+  console.log('ERROR', err);
+});
