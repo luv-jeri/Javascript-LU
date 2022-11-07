@@ -1,55 +1,19 @@
-// const p = new Promise((resolve, reject) => {
-//   const button = document.querySelectorAll('button');
-
-//   if (button.length > 0) {
-//     resolve(button.length);
-//   } else {
-//     reject("No button in UI");
-//   }
-// });
-
-// p.then((data) => {
-//   console.log(data);
-// });
-
-// p.catch((err) => {
-//   console.log(err);
-// });
-
-// console.log('Line 1');
-// console.log('Line 2');
-// console.log('Line 3');
-class Promise {
-  constructor(fun) {
-    this.fun = fun;
-    this.resolve = (data) => {
-      this.data = data;
+const myFetch = (url) => {
+  const p = new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    xhr.onload = () => {
+      if (xhr.status === 200) {
+        resolve(xhr.response);
+      } else {
+        reject(xhr.statusText);
+      }
     };
-    this.reject = (err) => {
-      this.err = err;
+    xhr.onerror = () => {
+      reject(xhr.statusText);
     };
-    fun(this.resolve, this.reject);
-  }
+    xhr.send();
+  });
 
-  then(cb) {
-    this.data && cb(this.data);
-  }
-
-  catch(cb) {
-    this.err && cb(this.err);
-  }
-}
-
-const loopPromise = new Promise((resolve, reject) => {
-  const button = document.querySelectorAll('button');
-  if (button.length > 0) resolve('DATA .....');
-  else reject('ERRR');
-});
-
-loopPromise.then((data) => {
-  console.log('SUCCESS', data);
-});
-
-loopPromise.catch((err) => {
-  console.log('ERROR', err);
-});
+  return p;
+};
