@@ -2,23 +2,85 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet">
-    <title>Promises</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles/index.css">
+  <title>Look Out</title>
 </head>
 
 <body>
-    <div id="wrapper">
 
-        <!-- <button></button> -->
+  <div id='main-container' class='flex jc-c ai-c '>
+    <header id="main" class="flex fd-column p-sm">
+      <nav id="navigation" class="flex jc-sb ai-c p-md">
+
+        <div id="search" class="flex ai-c">
+
+          <span>🔎</span>
+          <p>Search for places...</p>
+          <input >
+
+        </div>
 
 
-    </div>
+        <h4 id="title">Look Out</h4>
 
-    <script src=></script>
-    <script type='module' src="script.js"></script>
+        <div id="nav-right" class="flex">
+          <div id="units" class="flex">
+            <h4>C</h4>
+            <h4>F</h4>
+          </div>
+
+          <div id="icon">
+            <img src="./assests/sun.png" height="30px" >
+          </div>
+        </div>
+        
+      </nav>
+
+      <div id="sub-container" class="flex f-15 p-md">
+        <section id="side-bar" class="flex fd-column ">
+          <!-- This is the Weather Image -->
+          <div id="weather-icon" class="f-2 p-md">
+            <img src="assests/sun.png" alt="SUN">
+          </div>
+          <!-- This is the Temperature Value -->
+          <div id="temp-value" class="f-2 p-md">
+            <h1> 12° </h1> <span>c</span>
+            <div id="date-value">
+              <h4>
+                Monday , <span>12:00<span>
+              </h4>
+            </div>
+          </div>
+          <!-- These are the details -->
+          <div id="details" class="f-1 p-md">
+            <h5>☁️ Mostyl Cloudy</h5>
+            <h5>🌦️ Rain - 30%</h5>
+          </div>
+          <!-- Image for the city -->
+          <div id="city-img" class="f-1 m-md flex jc-c ai-c">
+            <h4>New York</h4>
+          </div>
+        </section>
+        <section id="main-section">
+          Main section
+        </section>
+      </div>
+    </header>
+  </div>
+
 </body>
+
+<script type="module" src="script.js"></script>
 
 </html>

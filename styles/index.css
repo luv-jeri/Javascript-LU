@@ -1,0 +1,27 @@
+@import "./sidebar.css";
+@import "./main.css";
+@import './nav.css';
+@import './utils/index.css';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+
+#main-container {
+    background-color: #D6D7DA;
+    height: 100vh;
+}
+
+header {
+    background-color: #FFFFFF;
+    width: 85vw;
+    height: 85vh;
+    border-radius: 50px;
+    box-shadow: 18px 17px 59px -17px rgba(0, 0, 0, 0.42);
+}
+
+

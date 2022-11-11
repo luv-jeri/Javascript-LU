@@ -1,0 +1,21 @@
+#search {
+    position: relative;
+    width: 200px;
+
+}
+
+nav #search input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-radius: 20px;
+    height: 40px;
+    width: 200px;
+    position: absolute;
+}
+
+nav #search span {}
+
+nav #search p {
+    margin-left: 1rem;
+}
