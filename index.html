@@ -24,18 +24,18 @@
         <div id="search" class="flex ai-c">
           <span>🔎</span>
           <p>Search for places...</p>
-          <input >
+          <input>
         </div>
-        <h4 id="title">Look Out</h4> 
+        <h4 id="title">Look Out</h4>
         <div id="nav-right" class="flex">
           <div id="units" class="flex">
-            <h4 className="" >°C</h4>
-            <h4 className="">°F</h4>
+            <h4 id="cButton" data="c" class="unit_selected">C</h4>
+            <h4 id="fButton" data="f" class="">F</h4>
           </div>
           <div id="icon">
-            <img src="./assests/sun.png" height="30px" >
+            <img src="./assests/sun.png" height="30px">
           </div>
-        </div>       
+        </div>
       </nav>
       <div id="sub-container" class="flex f-15 p-md">
         <section id="side-bar" class="flex fd-column ">
@@ -45,21 +45,19 @@
           </div>
           <!-- This is the Temperature Value -->
           <div id="temp-value" class="f-2 p-md">
-            <h1> 12° </h1> <span>c</span>
-            <div id="date-value">
-              <h4>
-                Monday , <span>12:00<span>
-              </h4>
+            <h1 id="title__temp">⌛</h1> <span>c</span>
+            <div id="date-value" class="flex jc-sb">
+              <h4 id="day__name">⌛</h4><span id="timer__value"><span>
             </div>
           </div>
           <!-- These are the details -->
           <div id="details" class="f-1 p-md">
-            <h5>☁️ Mostyl Cloudy</h5>
-            <h5>🌦️ Rain - 30%</h5>
+            <h5 id="weather__type">⌛</h5>
+            <h5 id="cloud__type">⌛</h5>
           </div>
           <!-- Image for the city -->
           <div id="city-img" class="f-1  flex jc-c ai-c">
-            <h4>New York</h4>
+            <h4 id="city__value">New York</h4>
           </div>
         </section>
         <section id="main-section">
@@ -70,6 +68,6 @@
   </div>
 </body>
 
-<script type="module" src="script.js"></script>
+<script type="module" src="./js/index.js"></script>
 
 </html>

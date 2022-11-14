@@ -1,5 +1,5 @@
 #weather-icon img {
-    height: 8rem;
+    height: 10rem;
 }
 
 #temp-value h1 {
@@ -16,7 +16,7 @@
 }
 
 
-#date-value span {
+#date-value #timer__value {
     font-size: 1rem;
     font-weight: 400;
 }
