@@ -1,7 +1,6 @@
 #search {
     position: relative;
     width: 200px;
-
 }
 
 nav #search input {
@@ -18,4 +17,21 @@ nav #search span {}
 
 nav #search p {
     margin-left: 1rem;
+}
+
+#units h4 {
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+
+#icon{
+    margin-left: 10px;
+    padding: 5px;
 }

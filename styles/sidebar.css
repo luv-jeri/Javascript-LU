@@ -1,9 +1,9 @@
 #weather-icon img {
-    height: 10rem;
+    height: 8rem;
 }
 
 #temp-value h1 {
-    font-size: 4.5rem;
+    font-size: 4rem;
     font-weight: 300;
     display: inline-block;
 }
@@ -25,6 +25,7 @@
     font-size: 0.9rem;
     font-weight: 600;
     color: #4F4F4F;
+    margin-bottom: 1rem;
 }
 
 #city-img {
@@ -33,5 +34,6 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    border-radius: 30px;
+    border-radius: 10px;
+    height: 300px
 }
