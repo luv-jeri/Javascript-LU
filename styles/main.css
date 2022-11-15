@@ -1,4 +1,6 @@
 #main-section {
     flex: 4;
-    /* background-color: blueviolet; */
+    padding: 1rem;
+    overflow: hidden;
 }
+

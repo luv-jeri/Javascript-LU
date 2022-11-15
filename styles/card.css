@@ -1,0 +1,34 @@
+#card-container {
+    overflow: scroll;
+    display: flex;
+}
+
+#card-container::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    padding: 1vw;
+    min-width: 10vw;
+    max-width: 10vw;
+    margin-left: 10px;
+    height: 150px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.card h6 {
+    color: rgb(9, 9, 9);
+    font-size: 1rem;
+    font-weight: normal;
+    text-align: center;
+}
+
+.temp-max {
+    font-weight: bold;
+}
+
+.temp-min {
+    font-weight: lighter;
+    color: rgb(68, 68, 68);
+
+}
