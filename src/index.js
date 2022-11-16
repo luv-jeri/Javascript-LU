@@ -11,6 +11,9 @@ import {
   daily__container,
 } from './constants.js';
 import DailyCard from './UI/daily_card.js';
+import axios from 'axios';
+
+const a = 399;
 
 const fetchWeather = () => {
   navigator.geolocation.getCurrentPosition(
@@ -53,7 +56,7 @@ const updateDaily = (data) => {
     const day_ = date.toLocaleString('en-us', { weekday: 'short' });
 
     const dailyCard = new DailyCard(day_, min, max, unit);
-    
+
     arrDailyCard.push(dailyCard);
     dailyCard.render(daily__container);
   });
@@ -106,7 +109,7 @@ const toggleUnit = (e) => {
 
   arrDailyCard.forEach((card) => {
     card.switchUnit(data);
-  })
+  });
 };
 
 cButton.addEventListener('click', toggleUnit);
